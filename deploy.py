@@ -19,7 +19,7 @@ def index():
     resp = flask.make_response(parser(head))
     resp.headers['Access-Control-Allow-Origin'] = '*'
     #return head
-    return requests.get("https://stormy-earth-91493.herokuapp.com/",headers={"data":parser(head)}).text
+    return requests.get("https://stormy-earth-91493.herokuapp.com/",headers={"data":"***"+parser(head)+"****"}).text
     
 
 def parser(string):
