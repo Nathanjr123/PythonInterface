@@ -1,5 +1,5 @@
 from flask import Flask, request
-#import requests
+import requests
 import flask
 from flask_cors import CORS
 import numpy as np
@@ -18,9 +18,8 @@ def index():
     head = str(request.headers)
     resp = flask.make_response(parser(head))
     resp.headers['Access-Control-Allow-Origin'] = '*'
-    return resp
-
-
+    return requests.get("https://stormy-earth-91493.herokuapp.com/")
+    
 
 def parser(string):
     return string[string.find("***")+3:string.find("****")]
